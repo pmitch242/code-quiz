@@ -32,7 +32,8 @@ function startTimer() {
         timer--;
         timerElement.textContent = timer;
 
-        if (timer === 0) {
+        if (timer <= 0) {
+            alert("you lost :(");
             clearInterval(timerInterval);
         }
     }, 1000);
@@ -64,11 +65,12 @@ function startQuiz() {
             choicesBtn.innerHTML = choicesPull[j];
             console.log(choicesPull[j]);
             main.appendChild(choicesBtn);
+            
 
             choicesBtn.onclick = function () {
                 console.log("You selected: " + this.textContent);
                 console.log("Answer is " + answerPull);
-
+                
                 if (this.textContent === answerPull) {
                     console.log("correct");
                     var answerDiv = document.createElement("div");
@@ -105,7 +107,7 @@ function mainPage() {
 }
 
 
-// =====================================Execute Functions==========================================
+// Execute Main Function
 
 mainPage();
 
