@@ -10,7 +10,7 @@ var optionD = document.querySelector(".option-D");
 var options = document.querySelector(".options");
 var timer = 75;
 var questionsAnswered = 5;
-var highscorePulled = timer;
+var highscorePulled = [];
 
 // Elements created
 var mainPageh1 = document.createElement("h1");
@@ -34,6 +34,18 @@ function clearPage() {
     console.log("Body was cleared!");
 }
 
+//builds scorecard 
+function scoreStart() {
+    highscorePulled = JSON.parse(localStorage.getItem("scores") || "[]");
+}
+
+function scoreFinal(){
+    highscorePulled = JSON.parse(localStorage.getItem("scores") || "[]");
+    highscorePulled.push(timer);
+
+    localStorage.setItem("scores", JSON.stringify(highscorePulled));
+    scoreStart();
+}
 
 //Launch Highscore Page
 function replacePage() {
@@ -45,10 +57,11 @@ function startTimer() {
     var timerInterval = setInterval(function () {
         timer--;
         timerElement.textContent = timer;
-        localStorage.setItem("High Scores", highscorePulled);
 
         if (timer <= 0) {
+            scoreStart();
             replacePage();
+            clearInterval();
         }
     }, 1000);
 }
@@ -201,6 +214,7 @@ function generateQuestion() {
     }
 
     if (questionsAnswered === 0) {
+        scoreFinal();
         replacePage();
     }
 }
