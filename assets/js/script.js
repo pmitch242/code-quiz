@@ -41,54 +41,6 @@ function startTimer() {
 
 
 // start quiz
-function startQuiz() {
-    // clearPage();
-    startTimer();
-
-    // Pick random number for questions array
-    function pickRandom() {
-        var ran = Math.floor(Math.random() * questions.length);
-        return ran;
-    }
-
-    for (var i = 0; i < 5; i++) {
-        clearPage();
-        var ranQuestions = questions[pickRandom()];
-        titleH3.textContent = ranQuestions.title;
-        main.appendChild(titleH3);
-        console.log(ranQuestions.title);
-        var choicesPull = ranQuestions.choices;
-        var answerPull = ranQuestions.answer;
-
-        for (var j = 0; j < choicesPull.length; j++) {
-            var choicesBtn = document.createElement("button");
-            choicesBtn.innerHTML = choicesPull[j];
-            console.log(choicesPull[j]);
-            main.appendChild(choicesBtn);
-            
-
-            choicesBtn.onclick = function () {
-                console.log("You selected: " + this.textContent);
-                console.log("Answer is " + answerPull);
-                
-                if (this.textContent === answerPull) {
-                    console.log("correct");
-                    var answerDiv = document.createElement("div");
-                    answerDiv.textContent = ("Correct!")
-                    main.appendChild(answerDiv);
-
-                }
-                else {
-                    console.log("wrong sir");
-                    var answerDiv = document.createElement("div");
-                    answerDiv.textContent = ("Wrong!")
-                    main.appendChild(answerDiv);
-                    timer = timer - 15;
-                }
-            }
-        }
-    }
-}
 
 
 
@@ -102,7 +54,6 @@ function mainPage() {
     // start quiz
     mainPageStartBtn.addEventListener("click", function () {
         clearPage();
-        startQuiz();
     })
 }
 
