@@ -1,15 +1,14 @@
 // =====================================Varibles==========================================
 var body = document.body;
 var main = document.querySelector(".main");
-var timerElement = document.querySelector("timer");
-var timerStart = 75;
+var timerElement = document.querySelector(".timer");
+var timer = 75;
 
 // Elements created
 var mainPageh1 = document.createElement("h1");
 var mainPagep = document.createElement("p");
 var mainPageStartBtn = document.createElement("button");
 var titleH3 = document.createElement("h3");
-var answerP = document.createElement("p");
 
 
 
@@ -27,10 +26,23 @@ function clearPage() {
     console.log("Body was cleared!");
 }
 
+// start timer
+function startTimer() {
+    var timerInterval = setInterval(function () {
+        timer--;
+        timerElement.textContent = timer;
+
+        if (timer === 0) {
+            clearInterval(timerInterval);
+        }
+    }, 1000);
+}
+
+
 // start quiz
 function startQuiz() {
     // clearPage();
-
+    startTimer();
 
     // Pick random number for questions array
     function pickRandom() {
@@ -52,16 +64,31 @@ function startQuiz() {
             choicesBtn.innerHTML = choicesPull[j];
             console.log(choicesPull[j]);
             main.appendChild(choicesBtn);
-        }
 
+            choicesBtn.onclick = function () {
+                console.log("You selected: " + this.textContent);
+                console.log("Answer is " + answerPull);
+
+                if (this.textContent === answerPull) {
+                    console.log("correct");
+                    var answerDiv = document.createElement("div");
+                    answerDiv.textContent = ("Correct!")
+                    main.appendChild(answerDiv);
+
+                }
+                else {
+                    console.log("wrong sir");
+                    var answerDiv = document.createElement("div");
+                    answerDiv.textContent = ("Wrong!")
+                    main.appendChild(answerDiv);
+                    timer = timer - 15;
+                }
+            }
+        }
     }
 }
 
 
-// start timer
-function startTimer() {
-
-}
 
 // Main page
 function mainPage() {
