@@ -10,6 +10,13 @@ var liElement = document.querySelector("li");
 var backButton = document.createElement("button");
 var clearButton = document.createElement("button");
 
+//set Attributes
+body.setAttribute("style", "max-width: 630px; margin: auto; margin-top: 40px;")
+main.setAttribute("style", "max-width: 630px; margin-top: 40px;");
+backButton.setAttribute("style", "margin-top: 20px");
+backButton.setAttribute("class", "btn btn-info");
+clearButton.setAttribute("style", "margin-top: 20px; margin-left: 40px;");
+clearButton.setAttribute("class", "btn btn-info");
 
 //Functions
 function replacePage() {
@@ -66,7 +73,7 @@ clearButton.addEventListener('click', function () {
     // }
     if (listClear.textContent === " "){
         var listReplace = document.createElement("li");
-        listReplace.setAttribute("class", "list-group-item list-group-item-info text-center text-white");
+        listReplace.setAttribute("class", "list-group-item text-center bg-info text-white");
         listReplace.textContent = ("Scores!!!")
         main.append(listReplace);
     }
@@ -74,8 +81,6 @@ clearButton.addEventListener('click', function () {
 
 // Set Elements
 backButton.textContent = "BACK";
-backButton.setAttribute("class", "btn btn-secondary");
 main.appendChild(backButton);
 clearButton.textContent = "CLEAR HIGH SCORE"
-clearButton.setAttribute("class", "btn btn-secondary");
 main.appendChild(clearButton);

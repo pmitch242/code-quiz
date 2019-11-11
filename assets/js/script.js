@@ -19,26 +19,28 @@ var mainPageLi = document.createElement("li");
 var mainPageInstru = document.createElement("li");
 var mainPageStartBtn = document.createElement("button");
 var titleH3 = document.createElement("h3");
-var highScoreh1 = document.createElement("h1");
+var highScoreh3 = document.createElement("h3");
 var scoreTold = document.createElement("h3");
 
 
 
 // Set Elements
 mainPageLi.textContent = "Coding Quiz Challenge";
-mainPageLi.setAttribute("class", "list-group-item list-group-item-info text-center text-white");
+mainPageLi.setAttribute("class", "list-group-item bg-info text-center text-white");
 mainPageInstru.textContent = "Score is calculated by time remaining. Answering quickly and correctly results in a higher score. Answering incorrectly results in a time penalty of 15 seconds.";
 mainPageInstru.setAttribute("class", "list-group-item text-center");
 mainPageStartBtn.innerHTML = "START";
-highScoreh1.textContent = "All Done!!!";
-submitButton.setAttribute("style", "margin-top: 20px");
-mainPageStartBtn.setAttribute("class", "list-group-item-info text-white");
+highScoreh3.textContent = "All Done!!!";
 
 //set Attributes
 body.setAttribute("style", "max-width: 830px; margin: auto;");
 main.setAttribute("style", "max-width: 630px");
 mainPageStartBtn.setAttribute("style", "margin-top: 20px");
-mainPageStartBtn.setAttribute("class", "list-group-item-info text-white");
+mainPageStartBtn.setAttribute("class", "btn btn-info");
+highScoreh3.setAttribute("class", "list-group-item bg-info text-center text-white");
+submitButton.setAttribute("style", "margin-top: 20px");
+submitButton.setAttribute("class", "btn btn-info");
+mainPageStartBtn.setAttribute("class", "btn btn-info");
 
 // =====================================Functions==========================================
 
@@ -90,7 +92,7 @@ function pickRandom() {
 function initials() {
     clearPage();
     // clearInterval(timerInterval);
-    main.appendChild(highScoreh1);
+    main.appendChild(highScoreh3);
     timer = timer + 1;
     timerElement.textContent = "";
     main.appendChild(userInitials);
