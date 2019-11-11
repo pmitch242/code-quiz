@@ -31,6 +31,14 @@ mainPageInstru.textContent = "Score is calculated by time remaining. Answering q
 mainPageInstru.setAttribute("class", "list-group-item text-center");
 mainPageStartBtn.innerHTML = "START";
 highScoreh1.textContent = "All Done!!!";
+submitButton.setAttribute("style", "margin-top: 20px");
+mainPageStartBtn.setAttribute("class", "list-group-item-info text-white");
+
+//set Attributes
+body.setAttribute("style", "max-width: 830px; margin: auto;");
+main.setAttribute("style", "max-width: 630px");
+mainPageStartBtn.setAttribute("style", "margin-top: 20px");
+mainPageStartBtn.setAttribute("class", "list-group-item-info text-white");
 
 // =====================================Functions==========================================
 
@@ -144,19 +152,12 @@ function generateQuestion() {
 
         if (optionA.textContent === answerPull) {
             console.log("correct");
-            var answerDiv = document.createElement("div");
-            answerDiv.textContent = ("Correct!")
-            main.appendChild(answerDiv);
             questionsAnswered = questionsAnswered - 1;
             console.log(questionsAnswered);
             generateQuestion();
-
         }
         else {
             console.log("wrong sir");
-            var answerDiv = document.createElement("div");
-            answerDiv.textContent = ("Wrong!")
-            main.appendChild(answerDiv);
             questionsAnswered = questionsAnswered - 1;
             console.log(questionsAnswered);
             timer = timer - 15;
@@ -171,9 +172,6 @@ function generateQuestion() {
 
         if (optionB.textContent === answerPull) {
             console.log("correct");
-            var answerDiv = document.createElement("div");
-            answerDiv.textContent = ("Correct!")
-            main.appendChild(answerDiv);
             questionsAnswered = questionsAnswered - 1;
             console.log(questionsAnswered);
             generateQuestion();
@@ -181,9 +179,6 @@ function generateQuestion() {
         }
         else {
             console.log("wrong sir");
-            var answerDiv = document.createElement("div");
-            answerDiv.textContent = ("Wrong!")
-            main.appendChild(answerDiv);
             questionsAnswered = questionsAnswered - 1;
             console.log(questionsAnswered);
             generateQuestion();
@@ -198,18 +193,12 @@ function generateQuestion() {
 
         if (optionC.textContent === answerPull) {
             console.log("correct");
-            var answerDiv = document.createElement("div");
-            answerDiv.textContent = ("Correct!")
-            main.appendChild(answerDiv);
             questionsAnswered = questionsAnswered - 1;
             console.log(questionsAnswered);
             generateQuestion();
         }
         else {
             console.log("wrong sir");
-            var answerDiv = document.createElement("div");
-            answerDiv.textContent = ("Wrong!")
-            main.appendChild(answerDiv);
             questionsAnswered = questionsAnswered - 1;
             console.log(questionsAnswered);
             generateQuestion();
@@ -224,18 +213,12 @@ function generateQuestion() {
 
         if (optionD.textContent === answerPull) {
             console.log("correct");
-            var answerDiv = document.createElement("div");
-            answerDiv.textContent = ("Correct!")
-            main.appendChild(answerDiv);
             questionsAnswered = questionsAnswered - 1;
             console.log(questionsAnswered);
             generateQuestion();
         }
         else {
             console.log("wrong sir");
-            var answerDiv = document.createElement("div");
-            answerDiv.textContent = ("Wrong!")
-            main.appendChild(answerDiv);
             questionsAnswered = questionsAnswered - 1;
             console.log(questionsAnswered);
             generateQuestion();
