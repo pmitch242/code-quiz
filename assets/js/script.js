@@ -33,8 +33,7 @@ function clearPage() {
     body.appendChild(main);
     console.log("Body was cleared!");
 }
-
-//builds scorecard 
+//Score
 function scoreStart() {
     highscorePulled = JSON.parse(localStorage.getItem("scores") || "[]");
 }
@@ -60,8 +59,8 @@ function startTimer() {
 
         if (timer <= 0) {
             scoreStart();
-            replacePage();
             clearInterval();
+            clearPage();
         }
     }, 1000);
 }
@@ -73,7 +72,6 @@ function pickRandom() {
     return ran;
 }
 
-// var currentQuestion = 0;
 // start quiz
 function generateQuestion() {
     clearPage();
@@ -92,14 +90,14 @@ function generateQuestion() {
     optionC.textContent = "";
     optionD.textContent = "";
 
-    //add the title of the question into the h1
+    //add the title of the question into the the options
     questionDiv.textContent = ranQuestions.title;
     optionA.textContent = choicesPull[0];
     optionB.textContent = choicesPull[1];
     optionC.textContent = choicesPull[2];
     optionD.textContent = choicesPull[3];
 
-    // add the h1 to the questionDiv
+    // Append question and options
     main.appendChild(questionDiv);
     main.appendChild(optionA);
     main.appendChild(optionB);
@@ -215,7 +213,7 @@ function generateQuestion() {
 
     if (questionsAnswered === 0) {
         scoreFinal();
-        replacePage();
+        clearPage();
     }
 }
 
