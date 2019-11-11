@@ -1,8 +1,10 @@
 // =====================================Varibles==========================================
 var body = document.body;
-var main = document.querySelector(".main");
+var main = document.querySelector(".mainScore");
+var listClear = document.querySelector(".listClear");
 var listContainer = document.querySelector(".listcontainer");
 var liElement = document.querySelector("li");
+// var scoreDiv = document.getElementById("mainScore");
 
 // Elements created
 var backButton = document.createElement("button");
@@ -13,14 +15,6 @@ var clearButton = document.createElement("button");
 function replacePage() {
     location.replace("index.html")
 }
-
-// Set Elements
-backButton.textContent = "BACK";
-backButton.setAttribute("class", "btn btn-secondary");
-main.appendChild(backButton);
-clearButton.textContent = "CLEAR HIGH SCORE"
-clearButton.setAttribute("class", "btn btn-secondary");
-main.appendChild(clearButton);
 
 scoreDisplay = localStorage.getItem("scores");
 initialsDisplay = localStorage.getItem("initials");
@@ -60,7 +54,28 @@ backButton.onclick = function () {
 
 clearButton.addEventListener('click', function () {
     localStorage.clear();
-    while (scoreLi.firstChild) {
-        scoreLi.removeChild(scoreLi.firstChild)
+    listClear.textContent = " ";
+    main.appendChild(listClear);
+    // scoreDiv.style.display = "block";
+    // var listReplace = document.createElement("li");
+    // listReplace.setAttribute("class", "list-group-item list-group-item-info text-center text-white");
+    // listReplace.textContent= ("Scores!!!")
+    // main.append(listReplace);
+    // while (liElement.previousSibling) {
+    //     liElement.remove(liElement.previousSibling)
+    // }
+    if (listClear.textContent === " "){
+        var listReplace = document.createElement("li");
+        listReplace.setAttribute("class", "list-group-item list-group-item-info text-center text-white");
+        listReplace.textContent = ("Scores!!!")
+        main.append(listReplace);
     }
 })
+
+// Set Elements
+backButton.textContent = "BACK";
+backButton.setAttribute("class", "btn btn-secondary");
+main.appendChild(backButton);
+clearButton.textContent = "CLEAR HIGH SCORE"
+clearButton.setAttribute("class", "btn btn-secondary");
+main.appendChild(clearButton);
