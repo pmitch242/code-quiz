@@ -7,16 +7,19 @@ var optionA = document.querySelector(".option-A");
 var optionB = document.querySelector(".option-B");
 var optionC = document.querySelector(".option-C");
 var optionD = document.querySelector(".option-D");
-var options = document.querySelector(".options");
 var timer = 75;
 var questionsAnswered = 5;
 var highscorePulled = [];
+var userInitials = document.querySelector(".userInitials");
+var submitButton = document.querySelector(".submitButton");
 
 // Elements created
 var mainPageh1 = document.createElement("h1");
 var mainPagep = document.createElement("p");
 var mainPageStartBtn = document.createElement("button");
 var titleH3 = document.createElement("h3");
+var highScoreh1 = document.createElement("h1");
+var scoreTold = document.createElement("h3");
 
 
 
@@ -24,6 +27,7 @@ var titleH3 = document.createElement("h3");
 mainPageh1.textContent = "Coding Quiz Challenge";
 mainPagep.textContent = "EXPLAIN RULES HERE... PRESS START TO BEGIN!!!";
 mainPageStartBtn.innerHTML = "START";
+highScoreh1.textContent = "All Done!!!";
 
 // =====================================Functions==========================================
 
@@ -38,7 +42,7 @@ function scoreStart() {
     highscorePulled = JSON.parse(localStorage.getItem("scores") || "[]");
 }
 
-function scoreFinal(){
+function scoreFinal() {
     highscorePulled = JSON.parse(localStorage.getItem("scores") || "[]");
     highscorePulled.push(timer);
 
@@ -57,10 +61,10 @@ function startTimer() {
         timer--;
         timerElement.textContent = timer;
 
-        if (timer <= 0) {
+        if (timer <= 0 || questionsAnswered === 0) {
+            clearInterval(timerInterval);
             scoreStart();
-            clearInterval();
-            clearPage();
+            // initials();        
         }
     }, 1000);
 }
@@ -70,6 +74,16 @@ function pickRandom() {
 
     var ran = Math.floor(Math.random() * questions.length);
     return ran;
+}
+
+function initials() {
+    clearPage();
+    // clearInterval(timerInterval);
+    main.appendChild(highScoreh1);
+    timer = timer + 1;
+    timerElement.textContent = "";
+    main.appendChild(userInitials);
+    main.appendChild(submitButton);
 }
 
 // start quiz
@@ -110,7 +124,7 @@ function generateQuestion() {
         console.log("You selected: " + optionA.textContent);
         console.log("Answer is " + answerPull);
 
-        if (options.textContent === answerPull) {
+        if (optionA.textContent === answerPull) {
             console.log("correct");
             var answerDiv = document.createElement("div");
             answerDiv.textContent = ("Correct!")
@@ -213,7 +227,8 @@ function generateQuestion() {
 
     if (questionsAnswered === 0) {
         scoreFinal();
-        clearPage();
+        initials();
+
     }
 }
 
