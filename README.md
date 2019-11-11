@@ -6,27 +6,15 @@ This repository "code-quiz-new" is a javascript quiz game. A question is generat
 
 Link = https://pmitch242.github.io/code-quiz-new/
 
-# Starting Page
+Starting Page
 <a href="https://pmitch242.github.io/code-quiz-new/">
 <p><img src="assets/images/startpagePic.png" alt="Starting page">
 </p>
 </a>
 
-# Questions Page
+Questions Page
 <a href="https://pmitch242.github.io/code-quiz-new/">
 <p><img src="assets/images/sample question.png" alt="Sample Question">
-</p>
-</a>
-
-# Initials Page
-<a href="https://pmitch242.github.io/code-quiz-new/">
-<p><img src="assets/images/initialspage.png" alt="Initials Question">
-</p>
-</a>
-
-# Scores Page
-<a href="https://pmitch242.github.io/code-quiz-new/">
-<p><img src="assets/images/scoresPage.png" alt="Scores Question">
 </p>
 </a>
 
