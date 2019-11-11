@@ -12,6 +12,7 @@ var questionsAnswered = 5;
 var highscorePulled = [];
 var userInitials = document.querySelector(".userInitials");
 var submitButton = document.querySelector(".submitButton");
+var initialsPulled = [];
 
 // Elements created
 var mainPageh1 = document.createElement("h1");
@@ -84,6 +85,21 @@ function initials() {
     timerElement.textContent = "";
     main.appendChild(userInitials);
     main.appendChild(submitButton);
+
+    submitButton.addEventListener("click", function (event) {
+        event.preventDefault();
+        console.log("I was clicked");
+
+        var initials = document.querySelector(".userInitials").value;
+
+        if (initials === "") {
+            displayMessage("error", "Initials cannot be blank");
+        }
+        initialsPulled = JSON.parse(localStorage.getItem("initials") || "[]");
+        initialsPulled.push(initials);
+        localStorage.setItem("initials", JSON.stringify(initialsPulled));
+        replacePage();
+    });
 }
 
 // start quiz
