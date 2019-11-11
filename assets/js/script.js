@@ -15,8 +15,8 @@ var submitButton = document.querySelector(".submitButton");
 var initialsPulled = [];
 
 // Elements created
-var mainPageh1 = document.createElement("h1");
-var mainPagep = document.createElement("p");
+var mainPageLi = document.createElement("li");
+var mainPageInstru = document.createElement("li");
 var mainPageStartBtn = document.createElement("button");
 var titleH3 = document.createElement("h3");
 var highScoreh1 = document.createElement("h1");
@@ -25,8 +25,10 @@ var scoreTold = document.createElement("h3");
 
 
 // Set Elements
-mainPageh1.textContent = "Coding Quiz Challenge";
-mainPagep.textContent = "EXPLAIN RULES HERE... PRESS START TO BEGIN!!!";
+mainPageLi.textContent = "Coding Quiz Challenge";
+mainPageLi.setAttribute("class", "list-group-item list-group-item-info text-center text-white");
+mainPageInstru.textContent = "Score is calculated by time remaining. Answering quickly and correctly results in a higher score. Answering incorrectly results in a time penalty of 15 seconds.";
+mainPageInstru.setAttribute("class", "list-group-item text-center");
 mainPageStartBtn.innerHTML = "START";
 highScoreh1.textContent = "All Done!!!";
 
@@ -252,8 +254,8 @@ function generateQuestion() {
 // Main page
 function startingPage() {
     clearPage();
-    main.appendChild(mainPageh1);
-    main.appendChild(mainPagep);
+    main.appendChild(mainPageLi);
+    main.appendChild(mainPageInstru);
     main.appendChild(mainPageStartBtn);
 
     // start quiz
