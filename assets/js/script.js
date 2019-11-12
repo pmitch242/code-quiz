@@ -74,13 +74,13 @@ function startTimer() {
         timer--;
         timerElement.textContent = timer;
 
-        if (timer <= 0 && questionsAnswered != 0){
+        if (timer <= 0 && questionsAnswered != 0) {
             clearInterval(timerInterval);
             scoreStart();
             replacePage();
             // initials();        
         }
-        else if (timer != 0 && questionsAnswered === 0){
+        else if (timer != 0 && questionsAnswered === 0) {
             clearInterval(timerInterval);
         }
     }, 1000);
@@ -160,6 +160,10 @@ function generateQuestion() {
             console.log("correct");
             questionsAnswered = questionsAnswered - 1;
             console.log(questionsAnswered);
+            optionA.setAttribute("class", "btn btn-success btn-lg btn-block text-left");
+            setInterval(function () {
+                optionA.setAttribute("class", "btn btn-light btn-lg btn-block text-left");
+            }, 250);
             generateQuestion();
         }
         else {
@@ -167,6 +171,10 @@ function generateQuestion() {
             questionsAnswered = questionsAnswered - 1;
             console.log(questionsAnswered);
             timer = timer - 15;
+            optionA.setAttribute("class", "btn btn-danger btn-lg btn-block text-left");
+            setInterval(function () {
+                optionA.setAttribute("class", "btn btn-light btn-lg btn-block text-left");
+            }, 250);
             generateQuestion();
         }
     }
@@ -180,6 +188,10 @@ function generateQuestion() {
             console.log("correct");
             questionsAnswered = questionsAnswered - 1;
             console.log(questionsAnswered);
+            optionB.setAttribute("class", "btn btn-success btn-lg btn-block text-left");
+            setInterval(function () {
+                optionB.setAttribute("class", "btn btn-light btn-lg btn-block text-left");
+            }, 250);
             generateQuestion();
 
         }
@@ -187,8 +199,12 @@ function generateQuestion() {
             console.log("wrong sir");
             questionsAnswered = questionsAnswered - 1;
             console.log(questionsAnswered);
-            generateQuestion();
             timer = timer - 15;
+            optionB.setAttribute("class", "btn btn-success btn-lg btn-block text-left");
+            setInterval(function () {
+                optionB.setAttribute("class", "btn btn-light btn-lg btn-block text-left");
+            }, 250);
+            generateQuestion();
         }
     }
 
@@ -201,14 +217,22 @@ function generateQuestion() {
             console.log("correct");
             questionsAnswered = questionsAnswered - 1;
             console.log(questionsAnswered);
+            optionC.setAttribute("class", "btn btn-success btn-lg btn-block text-left");
+            setInterval(function () {
+                optionC.setAttribute("class", "btn btn-light btn-lg btn-block text-left");
+            }, 250);
             generateQuestion();
         }
         else {
             console.log("wrong sir");
             questionsAnswered = questionsAnswered - 1;
             console.log(questionsAnswered);
-            generateQuestion();
             timer = timer - 15;
+            optionC.setAttribute("class", "btn btn-danger btn-lg btn-block text-left");
+            setInterval(function () {
+                optionC.setAttribute("class", "btn btn-light btn-lg btn-block text-left");
+            }, 250);
+            generateQuestion();
         }
     }
 
@@ -221,14 +245,22 @@ function generateQuestion() {
             console.log("correct");
             questionsAnswered = questionsAnswered - 1;
             console.log(questionsAnswered);
+            optionD.setAttribute("class", "btn btn-danger btn-lg btn-block text-left");
+            setInterval(function () {
+                optionD.setAttribute("class", "btn btn-light btn-lg btn-block text-left");
+            }, 250);
             generateQuestion();
         }
         else {
             console.log("wrong sir");
             questionsAnswered = questionsAnswered - 1;
             console.log(questionsAnswered);
-            generateQuestion();
             timer = timer - 15;
+            optionD.setAttribute("class", "btn btn-danger btn-lg btn-block text-left");
+            setInterval(function () {
+                optionD.setAttribute("class", "btn btn-light btn-lg btn-block text-left");
+            }, 250);
+            generateQuestion();
         }
     }
 
