@@ -74,10 +74,14 @@ function startTimer() {
         timer--;
         timerElement.textContent = timer;
 
-        if (timer <= 0 || questionsAnswered === 0) {
+        if (timer <= 0 && questionsAnswered != 0){
             clearInterval(timerInterval);
             scoreStart();
+            replacePage();
             // initials();        
+        }
+        else if (timer != 0 && questionsAnswered === 0){
+            clearInterval(timerInterval);
         }
     }, 1000);
 }

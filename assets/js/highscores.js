@@ -4,6 +4,7 @@ var main = document.querySelector(".mainScore");
 var listClear = document.querySelector(".listClear");
 var listContainer = document.querySelector(".listcontainer");
 var liElement = document.querySelector("li");
+
 // var scoreDiv = document.getElementById("mainScore");
 
 // Elements created
@@ -61,8 +62,8 @@ backButton.onclick = function () {
 
 clearButton.addEventListener('click', function () {
     localStorage.clear();
-    listClear.textContent = " ";
-    main.appendChild(listClear);
+    scoreLi.setAttribute("style", "display: none");
+    // main.appendChild(listClear);
     // scoreDiv.style.display = "block";
     // var listReplace = document.createElement("li");
     // listReplace.setAttribute("class", "list-group-item list-group-item-info text-center text-white");
@@ -71,13 +72,13 @@ clearButton.addEventListener('click', function () {
     // while (liElement.previousSibling) {
     //     liElement.remove(liElement.previousSibling)
     // }
-    if (listClear.textContent === " "){
-        var listReplace = document.createElement("li");
-        listReplace.setAttribute("class", "list-group-item text-center bg-info text-white");
-        listReplace.textContent = ("Scores!!!")
-        main.append(listReplace);
-    }
-})
+    // if (listClear.textContent === " "){
+    //     var listReplace = document.createElement("li");
+    //     listReplace.setAttribute("class", "list-group-item text-center bg-info text-white");
+    //     listReplace.textContent = ("Scores!!!")
+    //     main.append(listReplace);
+    // }
+});
 
 // Set Elements
 backButton.textContent = "BACK";
