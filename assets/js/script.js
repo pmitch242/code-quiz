@@ -83,7 +83,7 @@ function startTimer() {
         else if (timer != 0 && questionsAnswered === 0) {
             clearInterval(timerInterval);
         }
-    }, 1000);
+    }, 500);
 }
 
 // Pick random number for questions array
@@ -163,7 +163,7 @@ function generateQuestion() {
             optionA.setAttribute("class", "btn btn-success btn-lg btn-block text-left");
             setInterval(function () {
                 optionA.setAttribute("class", "btn btn-light btn-lg btn-block text-left");
-            }, 250);
+            }, 50);
             generateQuestion();
         }
         else {
@@ -174,7 +174,7 @@ function generateQuestion() {
             optionA.setAttribute("class", "btn btn-danger btn-lg btn-block text-left");
             setInterval(function () {
                 optionA.setAttribute("class", "btn btn-light btn-lg btn-block text-left");
-            }, 250);
+            }, 50);
             generateQuestion();
         }
     }
@@ -191,7 +191,7 @@ function generateQuestion() {
             optionB.setAttribute("class", "btn btn-success btn-lg btn-block text-left");
             setInterval(function () {
                 optionB.setAttribute("class", "btn btn-light btn-lg btn-block text-left");
-            }, 250);
+            }, 50);
             generateQuestion();
 
         }
@@ -203,7 +203,7 @@ function generateQuestion() {
             optionB.setAttribute("class", "btn btn-success btn-lg btn-block text-left");
             setInterval(function () {
                 optionB.setAttribute("class", "btn btn-light btn-lg btn-block text-left");
-            }, 250);
+            }, 50);
             generateQuestion();
         }
     }
@@ -220,7 +220,7 @@ function generateQuestion() {
             optionC.setAttribute("class", "btn btn-success btn-lg btn-block text-left");
             setInterval(function () {
                 optionC.setAttribute("class", "btn btn-light btn-lg btn-block text-left");
-            }, 250);
+            }, 50);
             generateQuestion();
         }
         else {
@@ -231,7 +231,7 @@ function generateQuestion() {
             optionC.setAttribute("class", "btn btn-danger btn-lg btn-block text-left");
             setInterval(function () {
                 optionC.setAttribute("class", "btn btn-light btn-lg btn-block text-left");
-            }, 250);
+            }, 50);
             generateQuestion();
         }
     }
@@ -248,7 +248,7 @@ function generateQuestion() {
             optionD.setAttribute("class", "btn btn-danger btn-lg btn-block text-left");
             setInterval(function () {
                 optionD.setAttribute("class", "btn btn-light btn-lg btn-block text-left");
-            }, 250);
+            }, 50);
             generateQuestion();
         }
         else {
@@ -259,7 +259,7 @@ function generateQuestion() {
             optionD.setAttribute("class", "btn btn-danger btn-lg btn-block text-left");
             setInterval(function () {
                 optionD.setAttribute("class", "btn btn-light btn-lg btn-block text-left");
-            }, 250);
+            }, 50);
             generateQuestion();
         }
     }
