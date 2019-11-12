@@ -83,7 +83,7 @@ function startTimer() {
         else if (timer != 0 && questionsAnswered === 0) {
             clearInterval(timerInterval);
         }
-    }, 500);
+    }, 1000);
 }
 
 // Pick random number for questions array
